@@ -48,4 +48,17 @@ export class ColorHomeComponent {
     console.log(this.colorReactiveForm.value);
   }
 
+  public addColor() {
+    // generate the color id manually
+    const color = {
+      // use the spread operator to spread out the array of ids
+      id: Math.max(...this.colors.map(c => c.id)) + 1,
+      name: this.colorReactiveForm.value.colorNameInput,
+      hexCode: this.colorReactiveForm.value.colorHexCodeInput
+    };
+
+    // Add new color to the end of the array
+    this.colors = this.colors.concat(color);
+  }
+
 }
