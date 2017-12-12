@@ -5,11 +5,13 @@ import { ColorToolModule } from './color-tool/color-tool.module';
 
 
 import { AppComponent } from './app.component';
+// import { ToolHeaderComponent } from './tool-header/tool-header.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // ToolHeaderComponent
   ],
   imports: [
     BrowserModule, ColorToolModule,

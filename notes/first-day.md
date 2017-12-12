@@ -33,6 +33,16 @@ Coding doesn't have to be done in TypeScript.
 Can be done in JS, but not recommended.
 Color model uses an interface to describe the shape of the object.
 
+# Principles of Decomposition
+
+Take our color home and decompose it into smaller parts.
+
+Break Child components called 
+* "color tool header" - cares about header text
+* "color table" - THe array of colors
+* "color form" - The input data and the form itself. Form 
+
+
 
 
 
