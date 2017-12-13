@@ -2,6 +2,15 @@
   pipe-component works!
 </p>
 
+<ul *ngFor="let num of nums">
+  <li>{{num}}</li>
+</ul>
 
 Sum is : {{ nums | sumArray }}
 Mean is : {{ nums | meanArray}}
+
+<form [formGroup]="numberForm">
+  <p>Input number</p>
+  <input type="number" id="inputNumber" formControlName="inputNumberInput">
+  <button type="button" (click)="handleSaveClick()">Save</button>
+</form>
