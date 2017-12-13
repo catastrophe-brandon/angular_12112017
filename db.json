@@ -1,0 +1,7 @@
+{
+  "colors": [
+    {"id": 1, "name": "red", "hexCode": "#FF0000"},
+    {"id": 2, "name": "blue", "hexCode": "#00FF00"},
+    {"id": 3, "name": "green", "hexCode": "#0000FF$"}
+  ]
+}
