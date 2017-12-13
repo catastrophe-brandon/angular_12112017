@@ -18,4 +18,7 @@ export class ColorsService {
     return this.httpClient.get<Color[]>('http://localhost:3050/colors').toPromise();
   }
 
+  public deleteColor(colorId: number) {
+    return this.httpClient.delete('http://localhost:3050/colors/' + colorId.toString()).toPromise();
+  }
 }

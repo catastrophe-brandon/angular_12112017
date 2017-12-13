@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import {ColorsService} from '../../services/colors.service';
 import { DataTableConfig } from '../../../shared-module/shared-module.module';
 import { Color } from '../../models/color';
 
@@ -9,7 +9,7 @@ import { Color } from '../../models/color';
   templateUrl: './color-home.component.html',
   styleUrls: ['./color-home.component.css']
 })
-export class ColorHomeComponent {
+export class ColorHomeComponent  implements OnInit {
 
   public headerText = 'Color Tool';
 
@@ -21,10 +21,17 @@ export class ColorHomeComponent {
   };
 
   public colors: Color[] = [
-    { id: 1, name: 'red', hexCode: '#FF0000' },
-    { id: 2, name: 'hot pink', hexCode: '#FF69B4' },
   ];
 
+  public colorsSvc: ColorsService;
+
+  public ngOnInit() {
+    this.colorsSvc.all().then(colors => this.colors = colors);
+  }
+
+  constructor(private colorSvc: ColorsService) {
+    this.colorsSvc = colorSvc;
+  }
 
   public addColor(newColor: Color) {
 
@@ -47,16 +54,12 @@ export class ColorHomeComponent {
   }
 
   public deleteColor(colorId: number) {
-
-    const editIndex = this.colors.findIndex(c =>
-      c.id === colorId);
-
-    this.colors = [
-      ...this.colors.slice(0, editIndex),
-      ...this.colors.slice(editIndex + 1),
-    ];
-
-
+    // delete the color from the service
+    console.log('deleting color ' + colorId);
+    console.log('colorsSvc is ' + this.colorsSvc);
+    this.colorsSvc.deleteColor(colorId).then(() => {
+      this.colorsSvc.all().then(colors => this.colors = colors);
+    });
   }
 
 }
