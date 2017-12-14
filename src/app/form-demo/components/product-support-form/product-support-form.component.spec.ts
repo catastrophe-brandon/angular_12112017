@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServiceChild2DemoComponent } from './service-child-2-demo.component';
+import { ProductSupportFormComponent } from './product-support-form.component';
 
-describe('ServiceChild2DemoComponent', () => {
-  let component: ServiceChild2DemoComponent;
-  let fixture: ComponentFixture<ServiceChild2DemoComponent>;
+describe('ProductSupportFormComponent', () => {
+  let component: ProductSupportFormComponent;
+  let fixture: ComponentFixture<ProductSupportFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ServiceChild2DemoComponent ]
+      declarations: [ ProductSupportFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ServiceChild2DemoComponent);
+    fixture = TestBed.createComponent(ProductSupportFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
