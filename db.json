@@ -1,7 +1,12 @@
 {
   "colors": [
-    {"id": 1, "name": "red", "hexCode": "#FF0000"},
-    {"id": 2, "name": "blue", "hexCode": "#00FF00"},
-    {"id": 3, "name": "green", "hexCode": "#0000FF$"}
+    { "id": 1, "name": "red", "hexCode": "#ff0000" },
+    { "id": 2, "name": "green", "hexCode": "#00ff00" },
+    { "id": 3, "name": "blue", "hexCode": "#0000ff" }
+  ],
+  "products": [
+    { "id": 1, "serialNumber": 120000, "name": "Blender" },
+    { "id": 2, "serialNumber": 130000, "name": "Toaster" },
+    { "id": 3, "serialNumber": 140000, "name": "Coffee Maker" }
   ]
 }

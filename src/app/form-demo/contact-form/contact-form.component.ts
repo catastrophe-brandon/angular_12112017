@@ -1,5 +1,29 @@
-import { Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import {Component, Directive, OnInit} from '@angular/core';
+import {AbstractControl, FormGroup, FormBuilder, FormControl, Validators, NG_VALIDATORS} from '@angular/forms';
+
+const phoneValidator = ( c: AbstractControl) => {
+  if (c.value == null || String(c.value).length === 0) {
+    return null;
+  }
+
+  const re = new RegExp('');
+
+  if (re.test(c.value)) {
+    return null;
+  } else {
+    return {
+      phone: true,
+    };
+  }
+};
+
+@Directive({
+  selector: 'input[type=tel][ngModel]',
+  providers: [
+    {provide: NG_VALIDATORS, useValue: phoneValidator, multi: true}
+  ]
+})
+export class PhoneValidatorDirective {}
 
 @Component({
   selector: 'contact-form',
@@ -19,6 +43,7 @@ export class ContactFormComponent implements OnInit {
     this.form = this.fb.group({
       'firstNameInput': ['', { validators: [Validators.required] }],
       'lastNameInput': '',
+      'phoneInput': ['', { validators: [phoneValidator] } ],
        addressGroup: this.fb.group({
          streetInput: '',
          cityInput: ''
