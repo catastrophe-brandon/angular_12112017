@@ -1,0 +1,16 @@
+
+.ng-touched .ng-invalid {
+  border: 2px solid red;
+}
+
+/* === Combinators === */
+
+/* span following an input tag is not displayed */
+input + span {
+  display: none;
+}
+
+/* display span when it's touched and invalid */
+input.ng-invalid.ng-touched + span {
+  display: inline;
+}

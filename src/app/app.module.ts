@@ -5,6 +5,7 @@ import { ColorToolModule } from './color-tool/color-tool.module';
 import { DemoToolModule } from './demo-tool/demo-tool.module';
 
 import { AppComponent } from './app.component';
+import {FormDemoModule} from './form-demo/form-demo.module';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule, ColorToolModule, DemoToolModule,
+    BrowserModule, ColorToolModule, DemoToolModule, FormDemoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

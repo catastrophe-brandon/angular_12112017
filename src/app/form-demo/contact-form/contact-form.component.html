@@ -1,0 +1,11 @@
+<div *ngIf="firstNameInput.invalid">
+  Summary: First Name is required.
+</div>
+
+<div>
+  <label for="first-name-input">First Name:</label>
+  <!-- hash signals that we're creating a ref -->
+  <input id="first-name-input" type="text" [(ngModel)]="firstName" required #firstNameInput="ngModel">
+  <span>First Name is required.</span>
+  <span>valid: {{firstNameInput.valid }}</span>
+</div>
