@@ -1,13 +1,26 @@
-<!-- Template-based validation, contrast with CSS-based validation -->
-<div *ngIf="firstNameInput.invalid">
-  Summary: First Name is required.
+<!-- V2 - Reactive forms - ***FIGHT*** -->
+<form [formGroup]="form" (submit)="showFormValues()">
+<div>
+  <label for="first-name-input">First Name:</label>
+  <input id="first-name-input" type="text" formControlName="firstNameInput">
 </div>
 
 <div>
-  <label for="first-name-input">First Name:</label>
-  <!-- hash signals that we're creating a ref to an underlying object from the template -->
-  <!-- firstNameInput becomes a reference to the ngModel object -->
-  <input id="first-name-input" type="text" [(ngModel)]="firstName" required #firstNameInput="ngModel">
-  <span>First Name is required.</span>
-  <span>valid: {{ firstNameInput.valid }}</span>
+  <label>Last Name</label>
+  <input type="text" formControlName="lastNameInput">
 </div>
+  <fieldset formGroupName="addressGroup">
+    <legend>Address</legend>
+
+    <div>
+      <label>Street:</label>
+      <input type="text" formControlName="streetInput">
+    </div>
+
+    <div>
+      <label>City</label>
+      <input type="text" formControlName="cityInput">
+    </div>
+  </fieldset>
+  <button>Submit</button>
+</form>

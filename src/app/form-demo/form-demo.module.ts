@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule
+    CommonModule, FormsModule, ReactiveFormsModule
   ],
   declarations: [ContactFormComponent, SignUpFormComponent],
   exports: [ContactFormComponent, SignUpFormComponent]
