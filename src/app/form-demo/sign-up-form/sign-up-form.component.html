@@ -1,0 +1,23 @@
+<h1>Sign-up Form</h1>
+<div>
+  <label for="full-name-input">Full Name:</label>
+  <input class="full-name" id="full-name-input" type="text" [(ngModel)]="fullName" required #firstNameInput="ngModel">
+  <span>First Name is required.</span>
+
+  <label for="email-input">Email Address:</label>
+  <input id="email-input" type="text" [(ngModel)]="email">
+
+  <label for="phone-input">Phone Number:</label>
+  <input id="phone-input" type="text" [(ngModel)]="phone">
+
+  <label for="new-member-input">New Member:</label>
+  <input id="new-member-input" type="checkbox" [(ngModel)]="newMember">
+
+  <label for="state-input">Choose your state</label>
+  <select id="state-input" [(ngModel)]="state" #stateInput="ngModel" default="Which one?" required>
+    <option *ngFor="let stateChoice of states" value="{{stateChoice}}">{{stateChoice}}</option>
+  </select>
+  <div *ngIf="stateInput.invalid">
+    Summary: State not selected, value is required.
+  </div>
+</div>
